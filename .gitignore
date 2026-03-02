@@ -1,0 +1,42 @@
+# =========================
+# Build directories
+# =========================
+build/
+build-*/
+cmake-build-*/
+
+# =========================
+# CMake
+# =========================
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# =========================
+# Ninja
+# =========================
+.ninja_deps
+.ninja_log
+build.ninja
+
+# =========================
+# ARM / Embedded Outputs
+# =========================
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.o
+*.a
+
+# =========================
+# ST / Cube leftovers
+# =========================
+*.ioc
+Drivers/
+Middlewares/
+Debug/
+Release/

@@ -1,0 +1,2 @@
+add_library(emblib_core INTERFACE)
+target_include_directories(emblib_core INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)

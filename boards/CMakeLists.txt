@@ -1,0 +1,3 @@
+#TODO
+add_library(emblib_board INTERFACE)
+target_link_libraries(emblib_board INTERFACE emblib_drivers emblib_platform)
