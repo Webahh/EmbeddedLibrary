@@ -9,10 +9,11 @@ target_link_libraries(blinky
 
 target_compile_options(blinky PRIVATE
     -mcpu=cortex-m55
-    -mthumb
     -ffunction-sections
     -fdata-sections
 )
+
+target_link_libraries(blinky PRIVATE emblib_mcu_flags)
 
 target_link_options(blinky PRIVATE
     -mcpu=cortex-m55
@@ -21,5 +22,5 @@ target_link_options(blinky PRIVATE
     -nostartfiles
     -nodefaultlibs
     -Wl,--gc-sections
-    -Wl,-e,main
+	-T${CMAKE_SOURCE_DIR}/platform/stm32n6/linker.ld
 )

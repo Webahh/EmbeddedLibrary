@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(EmbeddedLibrary LANGUAGES C CXX ASM)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/embedded_flags.cmake)
 
 option(BUILD_EXAMPLES "Build examples" ON)
 option(BUILD_TESTS "Build tests (host)" OFF)
@@ -24,4 +25,3 @@ if(BUILD_TESTS)
 	enable_testing()
 	add_subdirectory(tests)
 endif()
-
