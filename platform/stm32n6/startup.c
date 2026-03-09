@@ -1,4 +1,6 @@
 #include <stdint.h>
+#include "platform.h"
+#include "stm32n6xx.h"
 
 extern int main(void);
 
@@ -13,6 +15,8 @@ extern uint32_t _ebss;   /* end address for .bss (in RAM) */
 
 void Reset_Handler(void)
 {
+	platform_init_early();
+	
     /* Copy .data from FLASH to RAM */
     uint32_t *src = &_sidata;
     uint32_t *dst = &_sdata;
@@ -25,6 +29,8 @@ void Reset_Handler(void)
     while (dst < &_ebss) {
         *dst++ = 0;
     }
+	
+	platform_init_late();
 
     (void)main();
 
